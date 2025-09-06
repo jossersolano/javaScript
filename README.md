@@ -8,9 +8,12 @@ Practica de javaScript junto con el libro eloquentjavascript.
 
 [Capitulo 2](#capitulo-2)
 
+[Capitulo 3](#capitulo-3)
+
 ---
 
 # Capitulo 1
+# Valores, tipos y operadores
 El 13 en bits
 ![el 13 en bits](image.png)
 
@@ -203,6 +206,7 @@ let valor2 = edad2 ?? 18;
 ```
 
 # Capitulo 2
+# Estructura del programa
 Una expresion es como un fragmento de una oración.
 
 Una declaración de JavaScript es como una oración completa.
@@ -361,3 +365,69 @@ console.log("Hola " + tuNombre);
 No son necesarios en JS, solo se usan para que la estructura del código resalte para los lectores humanos. El programa puede incluso en una sola línea.
 
 ## Bucles For
+```js
+for (let numero = 0; numero <= 12; numero = numero + 2) {
+  console.log(numero);
+}
+// → 0
+// → 2
+//   … etcétera
+```
+Utiliza, primero una variable de contador `let numero = 0;`, luego un bucle while que verifica si se alcanzó este contador `numero <= 12;`, despues la actualización del contador para ratrear progreso `numero = numero + 2`.
+
+## Saliendo de un bucle
+Es el `break`.
+
+```js
+for (let actual = 20; ; actual = actual + 1) {
+  if (actual % 7 == 0) {
+    console.log(actual);
+    break;
+  }
+}
+// → 21
+```
+`continue` salta fuera del cuerpo del for y continua con la siguiente iteracion del bucle.
+
+## Actualización concisa de enlaces
+En vez de `counter = counter + 1;` se puede usar también `counter += 1;`. Incluso mas cortos como `counter++`. Y también aplica a los otros operadores.
+- result *= 2
+- counter -= 1 ó counter--
+
+## Despachar un valor con switch
+En vez de así:
+```js
+if (x == "valor1") accion1();
+else if (x == "valor2") accion2();
+else if (x == "valor3") accion3();
+else accionPredeterminada();
+```
+Puede manejarse así:
+```js
+switch (prompt("¿Cómo está el clima?")) {
+  case "lluvioso":
+    console.log("Recuerda llevar un paraguas.");
+    break;
+  case "soleado":
+    console.log("Vístete ligero.");
+  case "nublado":
+    console.log("Sal al exterior.");
+    break;
+  default:
+    console.log("¡Tipo de clima desconocido!");
+    break;
+}
+```
+Cuidado si se olvida un break a no ser que se quiera que se imprima también el siguiente valor.
+
+## Uso de mayúsculas
+Usar camelCase
+
+## Comentarios
+Comentarios de unsa sola línea con `//`.
+
+Una sección de texto con `/* y */`.
+
+# Capitulo 3
+# Funciones
+
