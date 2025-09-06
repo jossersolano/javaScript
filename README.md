@@ -1,5 +1,6 @@
 # javaScript
 Practica de javaScript junto con el libro eloquentjavascript.
+[Libro](https://www.eloquentjavascript.es/)
 
 ## Capitulo 1
 El 13 en bits
