@@ -1,8 +1,16 @@
 # javaScript
 Practica de javaScript junto con el libro eloquentjavascript.
+
 [Libro](https://www.eloquentjavascript.es/)
 
-## Capitulo 1
+## Indice
+[Capitulo 1](#capitulo-1)
+
+[Capitulo 2](#capitulo-2)
+
+---
+
+# Capitulo 1
 El 13 en bits
 ![el 13 en bits](image.png)
 
@@ -193,3 +201,163 @@ console.log(valor); // 0
 let edad2 = null;
 let valor2 = edad2 ?? 18;
 ```
+
+# Capitulo 2
+Una expresion es como un fragmento de una oración.
+
+Una declaración de JavaScript es como una oración completa.
+
+Un programa es una lista de declaraciones.
+
+Una declaración termina con ";" al final.
+```js
+1;
+!false;
+```
+
+## Enlaces o variable
+Atrapar y retener valores
+```js
+let caught = 5 * 5;
+```
+Con `let` es para definir el enlace, `caugth` es el nombre del enlace o variable y lo demás es la asignación del valor. Ahora ese nombre es una expresión.
+```js
+let ten = 10;
+console.log(ten * ten);
+// → 100
+```
+Si creas un enlace y no lde das valor, este por defecto es `undefined`.
+
+También `let` puede definir múltiples enlaces.
+```js
+let one = 1, two = 2;
+console.log(one + two);
+// → 3
+```
+También para crear estos enlaces se usa `var` y `const`.
+```js
+var name = "Ayda";
+const greeting = "Hola ";
+console.log(greeting + name);
+// → Hola Ayda
+```
+`var` se usaba antes de 2015, pero en algunas ocasiones se puede usar porque se comporta extrañamente el algunas situaciones (Google Apps Scripts).
+
+`const` para definir un enlace constante (que no cambiará).
+
+## Nombres de enlaces
+Se puede usar una o mas letras, también digitos pero no al inicio, y los signos pueden ser `$` o `_` solamente.
+
+Las palabras reservadas son:
+```js
+break case catch class const continue debugger default
+delete do else enum export extends false finally for
+function if implements import interface in instanceof let
+new package private protected public return static super
+switch this throw true try typeof var void while with yield
+```
+
+## El entorno
+Es la colección de enlaces y valores
+
+## Funciones
+Fragmento de programa envuelto en un valor. `prompt` es un ejemplo y crea un cuadro de dialogo para recibir una entrada. Ejecutar una función se llama invocar, llamar, o aplicar una función.
+
+A la función se le pasan los argumentos.
+
+## La función console.log
+```js
+let x = 30;
+console.log("el valor de x es", x);
+// → el valor de x es 30
+```
+
+## Valores de retorno
+Ej. La función Math.max toma cualquier cantidad de argumentos numéricos y devuelve el mayor:
+```js
+console.log(Math.max(2, 4));
+// → 4
+console.log(Math.min(2, 4) + 100);
+// → 102
+```
+
+## Control de flujo
+>Las sentencias se ejecutan como si fueran una historia, de arriba hacia abajo. 
+![alt text](image-1.png)
+
+```js
+let elNumero = Number(prompt("Elige un número"));
+console.log("Tu número es la raíz cuadrada de " + elNumero * elNumero);
+```
+
+## Ejecución condicional
+>La ejecución condicional se crea con la palabra clave if en JavaScript. En el caso simple, queremos que cierto código se ejecute si, y solo si, una cierta condición es verdadera.
+![alt text](image-2.png)
+
+```js
+let elNumero = Number(prompt("Elige un número"));
+if (!Number.isNaN(elNumero)) {
+  console.log("Tu número es la raíz cuadrada de " + elNumero * elNumero);
+}
+```
+o también:
+```js
+if (1 + 1 == 2) console.log("Es verdad");
+// → Es verdad
+```
+
+>A menudo no solo tendrás código que se ejecuta cuando una condición es verdadera, sino también código que maneja el otro caso. Esta ruta alternativa está representada por la segunda flecha en el diagrama.
+
+```js
+let elNumero = Number(prompt("Elige un número"));
+if (!Number.isNaN(elNumero)) {
+  console.log("Tu número es la raíz cuadrada de " + elNumero * elNumero);
+} else {
+  console.log("Oye. ¿Por qué no me diste un número?");
+}
+```
+O pueden existir varios caminos.
+![alt text](image-3.png)
+
+```js
+let num = Number(prompt("Escoge un número"));
+
+if (num < 10) {
+  console.log("Pequeño");
+} else if (num < 100) {
+  console.log("Mediano");
+} else {
+  console.log("Grande");
+}
+```
+
+## Bucles while y do
+Es una forma de control llamada bucle representada con:
+![alt text](image-4.png)
+
+Nos permite regresar en un punto del programa y repetirlo.
+
+```js
+let numero = 0;
+while (numero <= 12) {
+  console.log(numero);
+  numero = numero + 2;
+}
+// → 0
+// → 2
+//   … etcétera
+```
+>El bucle do siempre ejecuta su cuerpo al menos una vez, y comienza a probar si debe detenerse solo después de esa primera ejecución.
+
+```js
+let tuNombre;
+do {
+  tuNombre = prompt("¿Quién eres?");
+} while (!tuNombre);
+console.log("Hola " + tuNombre);
+```
+
+## Sangrado de código
+No son necesarios en JS, solo se usan para que la estructura del código resalte para los lectores humanos. El programa puede incluso en una sola línea.
+
+## Bucles For
